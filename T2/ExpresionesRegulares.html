@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de datos</title>
+</head>
+
+<body>
+
+    <h1>Validación de datos</h1>
+    <div id="resultado"></div>
+    <script>
+
+        function comprobar(titulo, dato, expr) {
+            let resultado = expr.test(dato);
+            document.getElementById("resultado").innerHTML +=
+                titulo + ": " + resultado + "<br>";
+            if (resultado == false) {
+                alert("El campo " + titulo + " no cumple con las especificaciones.");
+            }
+        }
+
+        let nombre = prompt("Introduce tu nombre:");
+        let apellidos = prompt("Introduce tus apellidos:");
+        let edad = prompt("Introduce tu edad:");
+        let email = prompt("Introduce tu email:");
+        let telefono = prompt("Introduce tu telefono:");
+        let centro = prompt("Introduce tu centro:");
+        let curso = prompt("Introduce tu curso:");
+        let observaciones = prompt("Introduce tus observaciones:");
+        let anio = prompt("Introduce tu anio:");
+
+        let exprNombre = /^[A-Z][a-z]+$/;
+        let exprApellidos = /^[A-Z][a-z]+( [A-Z][a-z]+)+$/;
+        let exprEdad = /^\d{1,3}$/;
+        let exprEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        let exprTelefono = /^[69]\d{8}$/;
+        let exprCentro = /^.{5,120}$/;
+        let exprCurso = /^[12]$/;
+        let exprObservaciones = /^[a-zA-Z0-9 .,;:!?()-]{1,120}$/;
+        let exprAnio = /^\d{4}$/;
+
+        comprobar("Nombre", nombre, exprNombre);
+        comprobar("Apellidos", apellidos, exprApellidos);
+        comprobar("Edad", edad, exprEdad);
+        comprobar("Email", email, exprEmail);
+        comprobar("Telefono", telefono, exprTelefono);
+        comprobar("Centro", centro, exprCentro);
+        comprobar("Curso", curso, exprCurso);
+        comprobar("Observaciones", observaciones, exprObservaciones);
+        comprobar("Anio", anio, exprAnio);
+
+    </script>
+
+</body>
+</html>
