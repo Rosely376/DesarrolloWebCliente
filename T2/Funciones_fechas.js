@@ -75,6 +75,7 @@ console.log(s)
 //     console.log(texto,p1,p2,p1)
 //     return `La summa es: ${p1+p2}`;
 
+
 // }
  
 
@@ -85,41 +86,4 @@ console.log(s)
 // }
 
 //número de parametros
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
