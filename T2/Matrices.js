@@ -30,7 +30,7 @@
 //     console.log("Valor = " + tabla2(i));
 // }
     
-// }
+// } 
 
 /////EJEMPLO 3/////
 // let table3 = ([1, 2, 3], [4, 5, 6])

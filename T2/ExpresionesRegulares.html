@@ -13,11 +13,11 @@
     <script>
 
         function comprobar(titulo, dato, expr) {
-            let resultado = expr.test(dato);
+            let resultado = expr.test(dato); //document.write(titulo + " ")
             document.getElementById("resultado").innerHTML +=
                 titulo + ": " + resultado + "<br>";
             if (resultado == false) {
-                alert("El campo " + titulo + " no cumple con las especificaciones.");
+                alert("El campo " + titulo + " no cumple");
             }
         }
 
