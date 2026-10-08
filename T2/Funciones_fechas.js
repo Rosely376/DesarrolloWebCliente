@@ -56,16 +56,16 @@ console.log("Los milisegundos son: " + milisegundos)
 
  
 
-const a = 1, b=2;
-console.log(`Suma: ${a+b}`); 
-console.log('Suma: ${a+b}');
-console.log("Suma: ${a+b}");
+// const a = 1, b=2;
+// console.log(`Suma: ${a+b}`); 
+// console.log('Suma: ${a+b}');
+// console.log("Suma: ${a+b}");
 
-//String de varias lineas: 
-const s = `Colocar un fecha 
-y pintarla` ;
-console.log(s)
-//recorer cada fecha con dame el año, dame el dia
+// //String de varias lineas: 
+// const s = `Colocar un fecha 
+// y pintarla` ;
+// console.log(s)
+// //recorer cada fecha con dame el año, dame el dia
 
 
 // let fecha6 = new Date()
