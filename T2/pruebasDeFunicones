@@ -1,0 +1,24 @@
+//Funciones de repetición que iteran arrays
+
+//foreach: permite iterar por cdada uno de los elementos de un array
+
+//map()
+
+
+//reduce() Devuelve un valor resultado de una operacion sobre los elementos del array
+const suma = [10,20,30];
+console.log(caches.reduce)
+
+//reduceRight() Igual que reduce() pero itera de derecha a izquierda
+ 
+
+//filter() obtiene un nuevo array filtrando el array inicial
+let a = [1,2,3];
+
+//every devuelve true si todos los elementos des array cumplen una condición
+
+//some() devuelve true si alguno de los elementos del array cumple una condición
+
+//find() devuelve un valor buscado en un arry o undefined en caso contrario
+
+//findIndex()
