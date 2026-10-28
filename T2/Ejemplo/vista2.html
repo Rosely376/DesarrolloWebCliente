@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con expresiones regulares</title>
+    <style>
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+<?php if ($pantalla == "formulario") { ?>
+
+    <h2>Formulario de registro</h2>
+
+    <form method="post" action="ejercicio2.php">
+
+        <p>Nombre:
+            <input type="text" name="nombre"
+                   value="<?php echo mantener($nombre, $errores['nombre']); ?>">
+            <span class="error"><?php echo $errores['nombre']; ?></span>
+        </p>
+
+        <p>Apellidos:
+            <input type="text" name="apellidos" placeholder="Primero Segundo"
+                   value="<?php echo mantener($apellidos, $errores['apellidos']); ?>">
+            <span class="error"><?php echo $errores['apellidos']; ?></span>
+        </p>
+
+        <p>Fecha de nacimiento:
+            <input type="text" name="fecha" placeholder="dd/mm/aaaa"
+                   value="<?php echo mantener($fecha, $errores['fecha']); ?>">
+            <span class="error"><?php echo $errores['fecha']; ?></span>
+        </p>
+
+        <p>DNI:
+            <input type="text" name="dni" placeholder="12345678Z"
+                   value="<?php echo mantener($dni, $errores['dni']); ?>">
+            <span class="error"><?php echo $errores['dni']; ?></span>
+        </p>
+
+        <p>Correo electrónico:
+            <input type="text" name="email"
+                   value="<?php echo mantener($email, $errores['email']); ?>">
+            <span class="error"><?php echo $errores['email']; ?></span>
+        </p>
+
+        <p><input type="submit" name="enviar" value="Enviar"></p>
+    </form>
+
+<?php } else { ?>
+
+    <h2>Datos recibidos</h2>
+
+    <table border="1" cellpadding="6">
+        <?php
+        // Solo muestro los campos que se han utilizado (los vacíos no)
+        foreach ($datos as $etiqueta => $valor) {
+            if ($valor != "") {
+                echo "<tr><th>$etiqueta</th><td>$valor</td></tr>";
+            }
+        }
+        ?>
+    </table>
+
+    <p><a href="ejercicio2.php">Volver al formulario</a></p>
+
+<?php } ?>
+
+</body>
+</html>

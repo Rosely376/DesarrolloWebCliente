@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de registro</title>
+    <style>
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+<?php if ($pantalla == "formulario") { ?>
+
+    <h2>Formulario de registro</h2>
+
+        <form method="post" action="ejercicio1.php" enctype="multipart/form-data">
+
+            <p>Alfabético
+                <input type="text" name="alfabetico" placeholder="Nombre"
+                       value="<?php echo mantener($alfabetico, $errores['alfabetico']); ?>">
+                <span class="error"><?php echo $errores['alfabetico']; ?></span>
+            </p>
+
+            <p>Alfabético opcional
+                <input type="text" name="alfabetico_opc" placeholder="Nombre"
+                       value="<?php echo mantener($alfabeticoOpc, $errores['alfabeticoOpc']); ?>">
+                <span class="error"><?php echo $errores['alfabeticoOpc']; ?></span>
+            </p>
+
+            <p>Alfanumérico
+                <input type="text" name="alfanumerico" placeholder="Apellido"
+                       value="<?php echo mantener($alfanumerico, $errores['alfanumerico']); ?>">
+                <span class="error"><?php echo $errores['alfanumerico']; ?></span>
+            </p>
+
+            <p>Alfanumérico opcional
+                <input type="text" name="alfanumerico_opc" placeholder="Apellido"
+                       value="<?php echo mantener($alfanumericoOpc, $errores['alfanumericoOpc']); ?>">
+                <span class="error"><?php echo $errores['alfanumericoOpc']; ?></span>
+            </p>
+
+            <p>Fecha
+                <input type="date" name="fecha"
+                       value="<?php echo mantener($fecha, $errores['fecha']); ?>">
+                <span class="error"><?php echo $errores['fecha']; ?></span>
+            </p>
+
+            <p>Fecha opcional
+                <input type="date" name="fecha_opc"
+                       value="<?php echo mantener($fechaOpc, $errores['fechaOpc']); ?>">
+                <span class="error"><?php echo $errores['fechaOpc']; ?></span>
+            </p>
+
+            <p>Radio obligatorio</p>
+            <p>
+                <input type="radio" name="radio" value="Opcion1" <?php if ($radio == "Opcion1") echo "checked"; ?>> Opcion1
+                <input type="radio" name="radio" value="Opcion2" <?php if ($radio == "Opcion2") echo "checked"; ?>> Opcion2
+                <input type="radio" name="radio" value="Opcion3" <?php if ($radio == "Opcion3") echo "checked"; ?>> Opcion3
+                <span class="error"><?php echo $errores['radio']; ?></span>
+            </p>
+
+            <p>Elige una opción:
+                <select name="combo">
+                    <option value="0">Seleccione</option>
+                    <option value="Opcion1" <?php if ($combo == "Opcion1") echo "selected"; ?>>Opcion1</option>
+                    <option value="Opcion2" <?php if ($combo == "Opcion2") echo "selected"; ?>>Opcion2</option>
+                    <option value="Opcion3" <?php if ($combo == "Opcion3") echo "selected"; ?>>Opcion3</option>
+                </select>
+                <span class="error"><?php echo $errores['combo']; ?></span>
+            </p>
+
+            <p>Elige al menos 1 y máximo 3:</p>
+            <p>
+                <?php
+                for ($i = 1; $i <= 6; $i++) {
+                    $valor = "Check" . $i;
+                    $marcado = "";
+                    if (in_array($valor, $checks)) {
+                        $marcado = "checked";
+                    }
+                    echo "<input type='checkbox' name='checks[]' value='$valor' $marcado> $valor ";
+                }
+                ?>
+                <span class="error"><?php echo $errores['checks']; ?></span>
+            </p>
+
+            <p>Nº Teléfono
+                <input type="text" name="telefono" placeholder="654987321"
+                       value="<?php echo mantener($telefono, $errores['telefono']); ?>">
+                <span class="error"><?php echo $errores['telefono']; ?></span>
+            </p>
+
+            <p>Email
+                <input type="text" name="email"
+                       value="<?php echo mantener($email, $errores['email']); ?>">
+                <span class="error"><?php echo $errores['email']; ?></span>
+            </p>
+
+            <p>Contraseña
+                <input type="password" name="password">
+                <span class="error"><?php echo $errores['password']; ?></span>
+            </p>
+
+            <p>Subir documento
+                <input type="file" name="documento">
+                <span class="error"><?php echo $errores['documento']; ?></span>
+            </p>
+
+            <p><input type="submit" name="enviar" value="Enviar"></p>
+        </form>
+
+<?php } else { ?>
+
+    <h2>Datos recibidos</h2>
+
+    <table border="1" cellpadding="6">
+        <?php
+        // Solo muestro los campos que se han utilizado (los vacíos no)
+        foreach ($datos as $etiqueta => $valor) {
+            if ($valor != "") {
+                echo "<tr><th>$etiqueta</th><td>$valor</td></tr>";
+            }
+        }
+        ?>
+    </table>
+
+    <p><a href="ejercicio1.php">Volver al formulario</a></p>
+
+<?php } ?>
+
+</body>
+</html>
