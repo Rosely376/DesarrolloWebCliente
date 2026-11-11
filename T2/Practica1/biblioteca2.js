@@ -146,7 +146,7 @@ console.log(LibrosLargos2);
 
 // Función que recibe una biblioteca y devuelve un array
 // con los libros que tienen más de 150 páginas.
-function librosLargos2(BIBLIOTECA) {
+function librosLargos2(BIBLIOTECA) { 
     const arrayLibros = BIBLIOTECA.filter(checkPages2);
     return arrayLibros;
 }
