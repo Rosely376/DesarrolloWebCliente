@@ -1,4 +1,4 @@
-const RIOS = {
+export class RIOS = {
     nombre: "Duero",
     cuenca: "blanco",
     caudal_medio: "persona",
