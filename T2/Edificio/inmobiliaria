@@ -1,0 +1,11 @@
+class Inmobiliaria{
+    #edificios
+
+    addEdificio(){
+
+    }
+
+    getEdificio(calle, numero){
+
+    }
+}

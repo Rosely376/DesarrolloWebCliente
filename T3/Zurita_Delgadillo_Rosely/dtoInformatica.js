@@ -1,0 +1,12 @@
+class DptoInformatica{
+
+
+    constructor(){
+
+    }
+
+    addAula(){
+
+    }
+
+}

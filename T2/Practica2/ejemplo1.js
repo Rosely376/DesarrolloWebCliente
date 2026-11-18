@@ -1,1 +1,0 @@
-$("Libro de aventuras del autor ");
