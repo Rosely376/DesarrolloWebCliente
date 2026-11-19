@@ -60,10 +60,20 @@ class Edificio{
       // return this.agregarPropietario() + ` ${nombre} es propietario de la puerta ${puerta} de la planta ${planta}`;
         this.#plantas[planta][puerta] = Propietario;
 
+        const existePlanta = planta >= 0 && planta < this.#plantas.length;
+        if (!existePlanta || puerta < 0 || puerta >= this.#plantas[planta].length) {
+            console.log(`No existe la puerta ${puerta} de la planta ${planta}`);
+            return;
+        }
+        this.#plantas[planta][puerta] = nombre;
+        console.log(`${nombre} es ahora el propietario de la puerta ${puerta} de la planta ${planta}`);
+    
+
     }
 
     imprimePlantas(plantas){
         //imprimer los propietario de cada piso
+        console.table(this.#plantas);
 
     }
 

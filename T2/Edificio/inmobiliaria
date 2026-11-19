@@ -1,11 +1,16 @@
-class Inmobiliaria{
-    #edificios
+class Inmobiliaria {
+    #edificios = [];
 
-    addEdificio(){
-
+    addEdificio(edificio) {
+        this.#edificios.push(edificio);
     }
 
-    getEdificio(calle, numero){
-
+    getEdificio(calle, numero) {
+        return this.#edificios.find(e => e.calle === calle && e.numero === numero) || null;
     }
 }
+
+const inmo = new Inmobiliaria();
+inmo.addEdificio(edificio1);
+console.log(inmo.getEdificio("Calle Melancolía", 1));      
+console.log(inmo.getEdificio("Otra", 9));                  

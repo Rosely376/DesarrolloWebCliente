@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperaturas</title>
+    <style>
+        body { font-family: sans-serif; }
+        .tabla { overflow-x: auto; margin-bottom: 24px; }
+        table { border-collapse: collapse; font-size: 12px; }
+        th, td { border: 1px solid #999; padding: 2px 5px; text-align: center; }
+        th { background: #d8d8c0; }
+        td.media { background: #b5b570; font-weight: bold; }
+    </style>
+    <script type="module" src="./principal_temperaturas.js"></script>
+</head>
+<body>
+    <h1>Temperaturas mensuales</h1>
+
+    <h2>Estado inicial</h2>
+    <div id="inicial" class="tabla"></div>
+
+    <h2>Tras modificar una temperatura y eliminar Gijón</h2>
+    <div id="final" class="tabla"></div>
+</body>
+</html>
